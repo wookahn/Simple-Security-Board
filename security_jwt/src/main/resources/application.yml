@@ -1,0 +1,28 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  h2:
+    console:
+      enabled: true
+      path: /test_db
+      
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/h2test
+    username: test
+    password: 1234
+  
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mappers/**/*.xml
+
+server:
+  port: 8888
+  
+jwt:
+  secret-key: SpringbootSecurityJsonWebTokenExampleProject
+
+excel:
+  path: /exceltest

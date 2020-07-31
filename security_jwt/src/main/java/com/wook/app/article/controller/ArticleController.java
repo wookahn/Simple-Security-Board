@@ -17,15 +17,27 @@ import com.wook.app.user.model.UserVO;
 
 @RestController
 public class ArticleController {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 960b185beb6916bf8b52e6787e2ecf75163ba641
 	@Autowired private ArticlesService articlesService;
 	@Autowired private ExcelArticleService excelArticleService;
 	
 	@RequestMapping(value = "/articles", method = RequestMethod.GET)
+<<<<<<< HEAD
 	public List<ArticleVO> articles(@RequestBody ArticleVO article) {
 		
 		List<ArticleVO> articles = articlesService.getArticles(article);
 		System.err.println("Articles num: " + articles.size());
 		
+=======
+	public List<ArticleVO> articles(@RequestBody(required = false) ArticleVO article) {
+		
+		List<ArticleVO> articles = articlesService.getArticles(article);
+		System.err.println("Articles num: " + articles.size());
+			
+>>>>>>> 960b185beb6916bf8b52e6787e2ecf75163ba641
 		return articles;
 		
 	} // articles() end
@@ -46,8 +58,13 @@ public class ArticleController {
 	} // removeArticle() end
 	
 	@RequestMapping(value = "/article/download", method = RequestMethod.POST)
+<<<<<<< HEAD
 	public void download(@RequestBody ArticleVO article) {
 		FileUtil.downloadFile(excelArticleService.downloadArticles(article));
+=======
+	public void download() {
+		FileUtil.downloadFile(excelArticleService.downloadArticles());
+>>>>>>> 960b185beb6916bf8b52e6787e2ecf75163ba641
 	} // download() end
 	
 } // ArticleController end
