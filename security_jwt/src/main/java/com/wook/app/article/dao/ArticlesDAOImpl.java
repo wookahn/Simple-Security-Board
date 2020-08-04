@@ -20,14 +20,11 @@ public class ArticlesDAOImpl implements ArticlesDAO {
 	} // selectArticles() end
 	
 	@Override
-<<<<<<< HEAD
 	public void selectArticles(ArticleVO article, ResultRowDataHandler handler) {
 		session.select("articleSqlMap.selectArticles", article, handler);
 	} // selectArticles() end
 	
 	@Override
-=======
->>>>>>> 960b185beb6916bf8b52e6787e2ecf75163ba641
 	public int insertArticle(ArticleVO article) {
 		return session.insert("articleSqlMap.insertArticle", article);
 	} // insertArticle() end
@@ -37,12 +34,5 @@ public class ArticlesDAOImpl implements ArticlesDAO {
 		return session.update("articleSqlMap.deleteArticle", no);
 	} // deleteArticle() end
 	
-<<<<<<< HEAD
-=======
-	@Override
-	public void selectArticles(ArticleVO article, ResultRowDataHandler handler) {
-		session.select("articleSqlMap.selectArticlesDownload", article, handler);
-	} // selectArticles() end
->>>>>>> 960b185beb6916bf8b52e6787e2ecf75163ba641
 	
 } // ArticlesDAOImpl end

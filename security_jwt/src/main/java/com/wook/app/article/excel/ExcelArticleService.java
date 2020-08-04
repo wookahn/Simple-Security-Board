@@ -19,11 +19,7 @@ public class ExcelArticleService {
 	@Autowired private ArticlesDAO articlesDAO;
 	@Value("${excel.path}") private String DOWNLOAD_PATH;
 	
-<<<<<<< HEAD
 	public String downloadArticles(ArticleVO article) {
-=======
-	public String downloadArticles() {
->>>>>>> 960b185beb6916bf8b52e6787e2ecf75163ba641
 		File directory = new File(DOWNLOAD_PATH);
 		File file = null;
 		
@@ -37,14 +33,10 @@ public class ExcelArticleService {
 			SXSSFWorkbook workbook = new SXSSFWorkbook(100);
 			ResultRowDataHandler handler = new ResultRowDataHandler(workbook);
 			
-<<<<<<< HEAD
 			ArticleVO articleVO = new ArticleVO();
 			articleVO.setId(article.getId());
 			
 			articlesDAO.selectArticles(articleVO, handler);
-=======
-			articlesDAO.selectArticles(new ArticleVO(), handler);
->>>>>>> 960b185beb6916bf8b52e6787e2ecf75163ba641
 			
 			FileOutputStream fos = new FileOutputStream(file.getPath());
 			workbook.write(fos);

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="articleSqlMap">
 
-	<select id="selectArticles" parameterType="com.wook.app.article.model.ArticleVO" resultType="com.wook.app.article.model.ArticleVO">
+	<select id="selectArticles" parameterType="ArticleVO" resultType="ArticleVO">
 		SELECT a.no, title, content, writer, id, views, article_group articleGroup, use, a.regdate
 		FROM articles a, users u
 		WHERE a.writer = u.no AND use = 'Y'
@@ -12,17 +12,7 @@
 		ORDER BY article_group DESC, no
 	</select>
 	
-<<<<<<< HEAD
-=======
-	<select id="selectArticlesDownload" parameterType="com.wook.app.article.model.ArticleVO" resultType="com.wook.app.article.model.ArticleVO">
-		SELECT a.no, title, content, writer, id, views, article_group articleGroup, a.regdate
-		FROM articles a, users u
-		WHERE a.writer = u.no AND use = 'Y'
-		ORDER BY article_group DESC, no
-	</select>
-	
->>>>>>> 960b185beb6916bf8b52e6787e2ecf75163ba641
-	<insert id="insertArticle" parameterType="com.wook.app.article.model.ArticleVO">
+	<insert id="insertArticle" parameterType="ArticleVO">
 		INSERT INTO articles(no, title, content, writer, article_group)
 		VALUES (articles_seq.nextval, #{title}, #{content}, #{writer}, 
 		<choose>

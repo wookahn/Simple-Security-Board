@@ -12,7 +12,7 @@ import com.wook.app.article.model.ArticleVO;
 public class ArticlesServiceImpl implements ArticlesService {
 
 	@Autowired private ArticlesDAO articlesDAO;
-	
+
 	@Override
 	public List<ArticleVO> getArticles(ArticleVO article) {
 		return articlesDAO.selectArticles(article);
